@@ -1,6 +1,12 @@
 import { Container, Text, Image } from '@nextui-org/react'
+import { useState } from 'react'
+
+
 
 export const NoFavorites = () => {
+
+  const [randomIMG] = useState('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' + String(Math.floor(Math.random() * 151) + 1) +'.svg')
+  
   return (
     <Container css={{
         display: 'flex',
@@ -14,7 +20,7 @@ export const NoFavorites = () => {
             No hay favoritos
         </Text>
         <Image 
-          src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg'
+          src={randomIMG}
           width={250}
           height={250}
           alt="No existe"
