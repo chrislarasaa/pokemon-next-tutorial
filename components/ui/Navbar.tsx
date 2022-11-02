@@ -1,10 +1,11 @@
-import { Link, Spacer, Text, useTheme } from "@nextui-org/react"
+import { Spacer, Text, useTheme } from "@nextui-org/react"
 import Image from "next/image"
 import NextLink from 'next/link'
+import { useState } from "react"
 export const Navbar = () => {
 
     const { theme } = useTheme()
-
+    const [randomIMG] = useState('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/' + String(Math.floor(Math.random() * 151) + 1) +'.png')
     return (
         <div style={{
             display: 'flex',
@@ -16,8 +17,8 @@ export const Navbar = () => {
             backgroundColor: theme?.colors.gray200.value
         }}>
             <Image
-                src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png'
-                alt="Ditto shiny"
+                src={randomIMG}
+                alt="Logo Shiny"
                 width='70'
                 height='70'
             />
